@@ -23,6 +23,7 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* Contenedor principal */
