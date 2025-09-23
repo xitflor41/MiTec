@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directorio - ITSZN</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+    header img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    nav {
+      background: #0a2342;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-flex;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      background: #0055aa;
+    }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #0a2342;
+      padding: 0;
+      margin: 0;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+    nav ul li ul li a {
+      padding: 10px;
+      font-weight: normal;
+    }
+    nav ul li ul li a:hover {
+      background: #0077cc;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .titulo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .titulo h1 {
+      font-size: 32px;
+      color: #003366;
+      margin: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #003366;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+    .correo-mail {
+      color: #003366;
+      text-decoration: none;
+    }
+    .correo-mail:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Footer estilo gob.mx ===== */
+    .gobmx {
+      background: #0c4a3c;
+      color: white;
+      padding: 30px 20px;
+      font-family: Arial, sans-serif;
+    }
+    .footer-contenedor {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .footer-logo img {
+      max-width: 150px;
+    }
+    .footer-seccion h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 5px;
+    }
+    .footer-seccion p, 
+    .footer-seccion ul {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .footer-seccion ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-seccion ul li {
+      margin-bottom: 6px;
+    }
+    .footer-seccion ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-seccion ul li a:hover {
+      text-decoration: underline;
+    }
+    .social-icons a img {
+      width: 30px;
+      margin-right: 10px;
+      filter: brightness(0) invert(1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="pleca-gob2.png" alt="Gobierno de México">
+    <img src="pleca_tecnm.jpg" alt="TecNM">
+    <img src="Sin título.jpg" alt="ITSZN">
+  </header>
+  
+  <nav>
+  <ul>
+    <li>
+      <a href="#">Conócenos</a>
+      <ul>
+        <li><a href="filosofia.html">Filosofía</a></li>
+        <li><a href="directorio.html">Directorio</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Admisión</a></li>
+    <li><a href="#">Oferta Educativa</a></li>
+    <li><a href="#">Plataformas</a></li>
+    <li><a href="#">Servicios</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    background: #0a2342;
+    padding: 10px;
+    text-align: center;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+  }
+  nav ul li {
+    position: relative;
+  }
+  nav ul li a {
+    color: white;
+    padding: 14px 22px; /* 👈 más ancho y alto */
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav ul li a:hover {
+    background: #0055aa;
+  }
+  nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #0a2342;
+    padding: 0;
+    margin: 0;
+    min-width: 200px; /* submenú más ancho también */
+    z-index: 1000;
+  }
+  nav ul li:hover ul {
+    display: block;
+  }
+  nav ul li ul li a {
+    padding: 12px 18px;
+    font-weight: normal;
+  }
+  nav ul li ul li a:hover {
+    background: #0077cc;
+  }
+</style>
+
+  <div class="container">
+    <div class="titulo">
+      <h1>DIRECTORIO</h1>
+    </div>
+
+    <!-- Directorio Principal -->
+    <table>
+      <thead>
+        <tr>
+          <th>Cargo</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Extensión</th>
+          <th>Correo Electrónico</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Director General</td>
+          <td>Nombre Apellido</td>
+          <td>498 488 30 02</td>
+          <td>1000</td>
+          <td><a href="mailto:itszndirecciongeneral@gmail.com" class="correo-mail">itszndirecciongeneral@gmail.com</a></td>
+        </tr>
+        <tr>
+          <td>Subdirectora de Planeación</td>
+          <td>Ing. Yahaira Tanairi Jiménez Reyes</td>
+          <td>498 488 30 02</td>
+          <td>1006</td>
+          <td><a href="mailto:planeacion@itszn.edu.mx" class="correo-mail">planeacion@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Director Académico</td>
+          <td>I.S.C. Jairo Isaac Lira Leyva</td>
+          <td>498 488 30 02</td>
+          <td>1005</td>
+          <td><a href="mailto:dir.acad@itszn.edu.mx" class="correo-mail">dir.acad@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Director de Planeación y Vinculación</td>
+          <td>Lic. Pedro Muro Zúñiga</td>
+          <td>498 488 30 02</td>
+          <td>1013</td>
+          <td><a href="mailto:vinculación@itszn.edu.mx" class="correo-mail">vinculación@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa del Departamento de Servicios Escolares</td>
+          <td>C.P. Elvia Alvarado Díaz</td>
+          <td>498 488 30 02</td>
+          <td>1010</td>
+          <td><a href="mailto:serv_escolar@itszn.edu.mx" class="correo-mail">serv_escolar@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa de Div. de Ing. en Sistemas y TIC</td>
+          <td>L.I. Mónica Hernández Solís</td>
+          <td>498 488 30 02</td>
+          <td>1011</td>
+          <td><a href="mailto:div_iisc@itszn.edu.mx" class="correo-mail">div_iisc@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa de Div. de Ing. en Admón. e Ing. Gestión Empresarial</td>
+          <td>L.A. Alma Rosa Pizarro Barrientos</td>
+          <td>498 488 30 02</td>
+          <td>1003</td>
+          <td><a href="mailto:div_ia@itszn.edu.mx" class="correo-mail">div_ia@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefe de División de Contador Público</td>
+          <td>L.C. José Antonio Ramírez Silva</td>
+          <td>498 488 30 02</td>
+          <td>1004</td>
+          <td><a href="mailto:div_cp@itszn.edu.mx" class="correo-mail">div_cp@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefe de Div. de Ing. en Industrias Alimentarias</td>
+          <td>Ing. José Mancillas Medina</td>
+          <td>498 488 30 02</td>
+          <td>1021</td>
+          <td><a href="mailto:div_iia@itszn.edu.mx" class="correo-mail">div_iia@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefe de División de Ingeniería Electromecánica</td>
+          <td>Ing. Sandrac Abimael Castruita Pérez</td>
+          <td>498 488 30 02</td>
+          <td>1019</td>
+          <td><a href="mailto:div_iem@itszn.edu.mx" class="correo-mail">div_iem@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Subdirección de Posgrado e Investigación</td>
+          <td>L.I. Abraham Esquivel Salas</td>
+          <td>498 488 30 02</td>
+          <td>1008</td>
+          <td><a href="mailto:inovacion_calidad@itszn.edu.mx" class="correo-mail">inovacion_calidad@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefe del Departamento de Personal</td>
+          <td>C.P. Jaqueline Delfín Sánchez</td>
+          <td>498 488 30 02</td>
+          <td>1002</td>
+          <td><a href="mailto:recursos_humanos@itszn.edu.mx" class="correo-mail">recursos_humanos@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefe del Depto. de Recursos Materiales y Servicios</td>
+          <td>L.A. Miriam Karina Juárez Canales</td>
+          <td>498 488 30 02</td>
+          <td>1020</td>
+          <td><a href="mailto:recursos_materiales@itszn.edu.mx" class="correo-mail">recursos_materiales@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa del Departamento de Residencias Profesionales y Servicio Social</td>
+          <td>I.I.A. Alejandra Alvarado Juárez</td>
+          <td>498 488 30 02</td>
+          <td>1024</td>
+          <td><a href="mailto:residencias@itszn.edu.mx" class="correo-mail">residencias@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa del Depto. de Desarrollo Académico</td>
+          <td>L.A. Lucía Faviola Álvarez Díaz</td>
+          <td>498 488 30 02</td>
+          <td>1026</td>
+          <td><a href="mailto:desaca@itszn.edu.mx" class="correo-mail">desaca@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Titular de la Unidad de Transparencia</td>
+          <td>I.S.C. Hugo Antonio Letechipía Chávez</td>
+          <td>498 488 30 02</td>
+          <td>1028</td>
+          <td><a href="mailto:transparencia@itszn.edu.mx" class="correo-mail">transparencia@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Subdirección de Vinculación</td>
+          <td>Arq. Teodoro Hernández Ríos</td>
+          <td>498 488 30 02</td>
+          <td>1013</td>
+          <td><a href="mailto:vinculación@itszn.edu.mx" class="correo-mail">vinculación@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefe del Centro de Cómputo</td>
+          <td>L.I. José María Salas Torres</td>
+          <td>498 488 30 02</td>
+          <td>1025</td>
+          <td><a href="mailto:ccomputo@itszn.edu.mx" class="correo-mail">ccomputo@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa del Depto. de Difusión y Concertación</td>
+          <td>L.C. Dagoberto Fajardo Menchaca</td>
+          <td>498 488 30 02</td>
+          <td>1014</td>
+          <td><a href="mailto:cdifusion@itszn.edu.mx" class="correo-mail">cdifusion@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa del Depto. de Planeación y Programación</td>
+          <td>C.P. Andrea Nohelly García Gaytán</td>
+          <td>498 488 30 02</td>
+          <td>1006</td>
+          <td><a href="mailto:planeacion@itszn.edu.mx" class="correo-mail">planeacion@itszn.edu.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa del Depto. de Vinculación</td>
+          <td>L.A. Ma Teresa Rodríguez Bautista</td>
+          <td>498 488 30 02</td>
+          <td>1013</td>
+          <td><a href="mailto:dep_vinculacion@zacatecasnte.tecnm.mx" class="correo-mail">dep_vinculacion@zacatecasnte.tecnm.mx</a></td>
+        </tr>
+        <tr>
+          <td>Jefa del Centro de Idiomas</td>
+          <td>L.A. Martha Patricia Osornio González</td>
+          <td>498 488 30 02</td>
+          <td>1012</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>Jefe del Centro de Información</td>
+          <td>Jesús Gerardo Sánchez Torres</td>
+          <td>498 488 30 02</td>
+          <td>1028</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>Unidad Médica</td>
+          <td>Dra. Aurora Elizabeth Arizmendi del Ángel</td>
+          <td>498 488 30 02</td>
+          <td>1016</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>Recepción</td>
+          <td>Susana Zúñiga Rodríguez</td>
+          <td>498 488 30 02</td>
+          <td>1001</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>Registro Auxiliares y Personal Administrativo</td>
+          <td>—</td>
+          <td>498 488 30 02</td>
+          <td>1022</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>Caseta Personal de Servicios Generales</td>
+          <td>—</td>
+          <td>498 488 30 02</td>
+          <td>1017</td>
+          <td>---</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== Footer gob.mx ===== -->
+  <footer class="gobmx">
+    <div class="footer-contenedor">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="Sin título.png" alt="Gobierno de México">
+      </div>
+
+      <!-- Enlaces -->
+      <div class="footer-seccion">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="https://participa.gob.mx">Participa</a></li>
+          <li><a href="https://www.gob.mx">Publicaciones Oficiales</a></li>
+          <li><a href="https://www.ordenjuridico.gob.mx">Marco Jurídico</a></li>
+          <li><a href="https://consultapublicamx.inai.org.mx">Plataforma Nacional de Transparencia</a></li>
+        </ul>
+      </div>
+
+      <!-- ¿Qué es gob.mx? -->
+      <div class="footer-seccion">
+        <h3>¿Qué es gob.mx?</h3>
+        <p>
+          Es el portal único de trámites, información y participación ciudadana.
+          <a href="https://www.gob.mx">Leer más</a>
+        </p>
+        <ul>
+          <li><a href="https://datos.gob.mx">Portal de datos abiertos</a></li>
+          <li><a href="https://www.gob.mx">Declaración de accesibilidad</a></li>
+          <li><a href="https://www.gob.mx">Aviso de privacidad integral</a></li>
+          <li><a href="https://www.gob.mx">Aviso de privacidad simplificado</a></li>
+          <li><a href="https://www.gob.mx">Términos y Condiciones</a></li>
+          <li><a href="https://www.gob.mx">Política de seguridad</a></li>
+          <li><a href="https://www.gob.mx">Mapa de sitio</a></li>
+        </ul>
+      </div>
+
+      <!-- Denuncia -->
+      <div class="footer-seccion">
+        <h3>Denuncia contra servidores públicos</h3>
+        <p>Síguenos en</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="https://twitter.com"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
