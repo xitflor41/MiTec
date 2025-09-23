@@ -104,6 +104,52 @@ body {
     color: var(--color-secundario);
 }
 
+.barra-superior {
+  background-color: #003366;
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+details {
+  position: relative; /* dropdown */
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::marker {
+  content: "";
+}
+
+summary:hover {
+  background-color: #0055a5;
+}
+
+/* Submenú oculto */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-col
+
+
+
 /* Footer */
 #footer {
     background: var(--color-primario);
