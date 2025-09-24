@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modalidades Educativas - ITSZN</title>
+    <link rel="stylesheet" href="../assets/css/estilos.css">
+    <style>
+        .modalidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .modalidad-card {
+            background: var(--color-blanco);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .modalidad-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .modalidad-imagen {
+            width: 100%;
+            max-width: 200px;
+            height: 150px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .modalidad-titulo {
+            color: var(--color-primario);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--color-acento);
+            padding-bottom: 0.5rem;
+        }
+        
+        .modalidad-descripcion {
+            color: var(--color-texto);
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+        
+        .caracteristicas-lista {
+            text-align: left;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .caracteristicas-lista li {
+            margin-bottom: 0.5rem;
+            list-style-type: circle;
+        }
+        
+        .seccion-titulo {
+            text-align: center;
+            color: var(--color-primario);
+            font-size: 2.2rem;
+            margin: 2rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--color-secundario);
+        }
+        
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--color-texto);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Estilos para la barra de navegación desplegable */
+        .barra-superior nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .barra-superior details {
+            position: relative;
+        }
+
+        .barra-superior summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            background: var(--color-secundario);
+            border-radius: 4px;
+            color: var(--color-blanco);
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .barra-superior summary:hover {
+            background: var(--color-hover);
+        }
+
+        .barra-superior summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .barra-superior .menu-desplegable {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--color-blanco);
+            min-width: 200px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .barra-superior .menu-desplegable a {
+            display: block;
+            padding: 0.7rem 1rem;
+            color: var(--color-texto);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border-bottom: 1px solid var(--color-fondo);
+        }
+
+        .barra-superior .menu-desplegable a:hover {
+            background: var(--color-fondo);
+            color: var(--color-primario);
+        }
+
+        .barra-superior .menu-desplegable a:last-child {
+            border-bottom: none;
+        }
+
+        .barra-superior .enlace-directo {
+            padding: 0.5rem 1rem;
+            background: var(--color-secundario);
+            border-radius: 4px;
+            color: var(--color-blanco);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .barra-superior .enlace-directo:hover {
+            background: var(--color-hover);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- Encabezado -->
+        <div id="header">
+            <h1>Instituto Tecnológico Superior de Zacapoaxtla</h1>
+            <p>Oferta Educativa - Modalidades</p>
+        </div>
+
+        <!-- Barra de navegación actualizada -->
+        <div class="barra-superior">
+            <nav>
+                <details>
+                    <summary>Conócenos</summary>
+                    <div class="menu-desplegable">
+                        <a href="../Conocenos/filesofia.html">Filosofía</a>
+                        <a href="../Conocenos/directorio.html">Directorio</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Oferta educativa</summary>
+                    <div class="menu-desplegable">
+                        <a href="carreras.html">Carreras</a>
+                        <a href="modalidades.html">Modalidades</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Servicios</summary>
+                    <div class="menu-desplegable">
+                        <a href="../Servicios/sce.html">Sistema Escolar (SCE)</a>
+                        <a href="../Servicios/moodle.html">Plataforma Moodle</a>
+                        <a href="../Servicios/bolsa-trabajo.html">Bolsa de Trabajo</a>
+                    </div>
+                </details>
+
+                <a href="../FAQ.html" class="enlace-directo">FAQ</a>
+            </nav>
+        </div>
+
+        <!-- Contenido principal -->
+        <div id="content">
+            <h2 class="seccion-titulo">Modalidades Educativas</h2>
+            
+            <p class="intro-text">
+                El ITSZN ofrece diferentes modalidades educativas para adaptarse a las necesidades de nuestros estudiantes. 
+                Cada modalidad está diseñada para brindar una experiencia educativa de calidad, permitiendo que cada alumno 
+                elija la opción que mejor se ajuste a su estilo de vida y compromisos personales.
+            </p>
+            
+            <div class="modalidades-grid">
+                <!-- Modalidad Escolarizada -->
+                <div class="modalidad-card">
+                    <img src="../assets/img/EC.png" alt="Modalidad Escolarizada" class="modalidad-imagen">
+                    <h3 class="modalidad-titulo">Escolarizado (Tradicional)</h3>
+                    <p class="modalidad-descripcion">
+                        La modalidad escolarizada es el formato tradicional de educación superior donde los estudiantes 
+                        asisten regularmente a clases presenciales en las instalaciones del instituto.
+                    </p>
+                    <h4>Características principales:</h4>
+                    <ul class="caracteristicas-lista">
+                        <li>Asistencia regular y obligatoria a clases</li>
+                        <li>Horarios fijos establecidos por la institución</li>
+                        <li>Interacción directa con profesores y compañeros</li>
+                        <li>Acceso inmediato a laboratorios y biblioteca</li>
+                        <li>Actividades extracurriculares presenciales</li>
+                    </ul>
+                    <p><strong>Ideal para:</strong> Estudiantes que pueden dedicarse de tiempo completo a sus estudios.</p>
+                </div>
+
+                <!-- Modalidad Semiescolarizada -->
+                <div class="modalidad-card">
+                    <img src="../assets/img/SC.png" alt="Modalidad Semiescolarizada" class="modalidad-imagen">
+                    <h3 class="modalidad-titulo">Semiescolarizado (Mixto)</h3>
+                    <p class="modalidad-descripcion">
+                        Combina la flexibilidad del estudio independiente con la guía presencial de expertos, 
+                        ideal para estudiantes que trabajan o tienen responsabilidades familiares.
+                    </p>
+                    <h4>Características principales:</h4>
+                    <ul class="caracteristicas-lista">
+                        <li>Combinación de sesiones presenciales y trabajo en línea</li>
+                        <li>Clases los fines de semana o algunos días entre semana</li>
+                        <li>Mayor autonomía en el aprendizaje</li>
+                        <li>Flexibilidad de horarios</li>
+                        <li>Seguimiento personalizado por tutores</li>
+                    </ul>
+                    <p><strong>Ideal para:</strong> Profesionistas que trabajan y desean continuar su formación.</p>
+                </div>
+
+                <!-- Modalidad Educación a Distancia -->
+                <div class="modalidad-card">
+                    <img src="../assets/img/ED.png" alt="Educación a Distancia" class="modalidad-imagen">
+                    <h3 class="modalidad-titulo">Educación a Distancia</h3>
+                    <p class="modalidad-descripcion">
+                        Modalidad 100% en línea que permite estudiar desde cualquier lugar y momento, 
+                        utilizando plataformas digitales avanzadas para el aprendizaje.
+                    </p>
+                    <h4>Características principales:</h4>
+                    <ul class="caracteristicas-lista">
+                        <li>Total flexibilidad de horarios y ubicación</li>
+                        <li>Plataformas digitales como Moodle para el aprendizaje</li>
+                        <li>Comunicación virtual con profesores y compañeros</li>
+                        <li>Material educativo disponible 24/7</li>
+                        <li>Evaluaciones y actividades en línea</li>
+                    </ul>
+                    <p><strong>Ideal para:</strong> Personas con movilidad limitada o que viven lejos del campus.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: var(--color-fondo); border-radius: 8px;">
+                <h3 style="color: var(--color-primario); text-align: center; margin-bottom: 1rem;">¿Cómo elegir la modalidad adecuada?</h3>
+                <p style="text-align: center;">
+                    Considera tu disponibilidad de tiempo, estilo de aprendizaje, acceso a tecnología y compromisos personales. 
+                    Todas las modalidades otorgan el mismo título con validez oficial SEP.
+                </p>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <div id="footer">
+            <p>Instituto Tecnológico Superior Zacatecas Norte © 2024 - Todos los derechos reservados</p>
+        </div>
+    </div>
+</body>
+</html>
