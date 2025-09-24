@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/estilos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web</title>
-    
+    <title>Instituto Tecnológico Superior de Zacatecas Norte</title>
+    <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
     <div id="wrap">
@@ -18,26 +17,31 @@
             <nav>
                 <details>
                     <summary>Conócenos</summary>
-                    <a href="#filosofia">Filosofía</a><br>
-                    <a href="#otra">Otra opción</a>
+                    <div class="menu-desplegable">
+                        <a href="Conocenos/Filosofia.html">Filosofía</a>
+                        <a href="Conocenos/Directorio.html">Directorio</a>
+                    </div>
                 </details>
 
                 <details>
                     <summary>Oferta educativa</summary>
-                    <a href="#carreras">Carreras</a><br>
-                    <a href="#modalidades">Modalidades</a>
+                    <div class="menu-desplegable">
+                        <a href="#carreras">Carreras</a>
+                        <a href="#modalidades">Modalidades</a>
+                    </div>
                 </details>
 
                 <details>
                     <summary>Servicios</summary>
-                    <a href="#serv1">Servicio 1</a><br>
-                    <a href="#serv2">Servicio 2</a><br>
-                    <a href="#serv3">Servicio 3</a>
+                    <div class="menu-desplegable">
+                        <a href="#serv1">Servicio 1</a>
+                        <a href="#serv2">Servicio 2</a>
+                        <a href="#serv3">Servicio 3</a>
+                    </div>
                 </details>
 
-                <a href="#faq">FAQ</a>
+                <a href="#faq" class="enlace-directo">FAQ</a>
             </nav>
-
         </div>
         
         <div id="content">
@@ -67,7 +71,7 @@
                     <li>Orientación académica</li>
                     <li>Servicios de salud</li>
                     <li>Actividades extracurriculares</li>
-                    <li>Bolsa de trabajooooo</li>
+                    <li>Bolsa de trabajo</li>
                 </ul>
             </div>
             
@@ -85,8 +89,10 @@
         </div>
         
         <div id="footer">
-            <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
+            <p>&copy; 2023 Instituto Tecnológico Superior de Zacatecas Norte. Todos los derechos reservados.</p>
         </div>
     </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

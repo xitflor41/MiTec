@@ -1,107 +1,192 @@
-/* estilos.css */
-
-/* Paleta de colores inspirada en ITSZN Zacatecas Norte */
-:root {
-    --color-primario: #003366;   /* Azul oscuro */
-    --color-secundario: #006699; /* Azul medio */
-    --color-acento: #0099CC;     /* Azul claro/acento */
-    --color-fondo: #f5f8fa;       /* Fondo claro/gris muy suave */
-    --color-texto: #333333;       /* Gris oscuro para texto principal */
-    --color-blanco: #ffffff;      /* Blanco */
-    --color-hover: #005580;       /* Azul para hover / interacciones */
-}
-
-/* Reset básico */
+/* Reset y estilos base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
+    background-color: #f5f5f5;
+    color: #333;
     line-height: 1.6;
 }
 
-/* Contenedor principal */
 #wrap {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
-    background: var(--color-blanco);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Encabezado */
+/* Header */
 #header {
-    background: var(--color-primario);
-    color: var(--color-blanco);
+    background: linear-gradient(135deg, #1a3a8f, #2c5aa0);
+    color: white;
+    padding: 30px 20px;
     text-align: center;
-    padding: 2rem 1rem;
 }
 
 #header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
-/* Barra de navegación */
+#header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Barra superior estilo Mercado Libre */
 .barra-superior {
+    background-color: #fff159;
+    border-bottom: 1px solid #e6e6e6;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.barra-superior nav {
     display: flex;
-    justify-content: center;
-    background: var(--color-secundario);
-    padding: 0.8rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.barra-superior a {
-    color: var(--color-blanco);
+.barra-superior details {
+    position: relative;
+}
+
+.barra-superior summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+/* Eliminar marcadores nativos del details/summary */
+.barra-superior summary::-webkit-details-marker {
+    display: none;
+}
+
+.barra-superior summary::marker {
+    display: none;
+}
+
+/* Indicador personalizado */
+.barra-superior summary::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 5px;
+    color: #666;
+    transition: transform 0.2s;
+}
+
+.barra-superior details:hover summary::after {
+    transform: rotate(180deg);
+}
+
+.barra-superior summary:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Menús desplegables - se activan con hover */
+.barra-superior .menu-desplegable {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 220px;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+    border-radius: 0 0 4px 4px;
+    display: none;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Mostrar menú al hacer hover en el details */
+.barra-superior details:hover .menu-desplegable {
+    display: block;
+}
+
+.barra-superior .menu-desplegable a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
     text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
 }
 
-.barra-superior a:hover {
-    background-color: var(--color-hover);
-    color: var(--color-blanco);
+.barra-superior .menu-desplegable a:hover {
+    background-color: #f8f9fa;
+    color: #2968c8;
+    border-left-color: #2968c8;
+    padding-left: 25px;
 }
 
-/* Contenido */
+/* Enlace directo (FAQ) */
+.barra-superior .enlace-directo {
+    text-decoration: none;
+    color: #333;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.barra-superior .enlace-directo:hover {
+    background-color: rgba(0,0,0,0.05);
+    color: #2968c8;
+}
+
+/* Eliminar saltos de línea */
+.barra-superior .menu-desplegable br {
+    display: none;
+}
+
+/* Contenido principal */
 #content {
-    padding: 2rem;
+    padding: 30px 20px;
 }
 
 .seccion {
-    margin-bottom: 2rem;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .seccion h2 {
-    color: var(--color-primario);
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--color-secundario);
-    display: inline-block;
-    padding-bottom: 0.3rem;
+    color: #1a3a8f;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.seccion p, .seccion li {
+    margin-bottom: 10px;
 }
 
 .seccion ul {
-    margin: 1rem 0 1rem 2rem;
-    list-style-type: square;
+    padding-left: 20px;
 }
 
-/* Links secundarios dentro del contenido (si los hay) */
-.seccion a {
-    color: var(--color-acento);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.seccion a:hover {
-    color: var(--color-secundario);
+.seccion li {
+    margin-bottom: 8px;
 }
 
 .barra-superior {
@@ -152,9 +237,54 @@ summary:hover {
 
 /* Footer */
 #footer {
-    background: var(--color-primario);
-    color: var(--color-blanco);
+    background-color: #2c3e50;
+    color: #ecf0f1;
     text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Animación para el dropdown */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .barra-superior nav {
+        flex-direction: column;
+    }
+    
+    .barra-superior details {
+        width: 100%;
+    }
+    
+    .barra-superior summary {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .barra-superior .menu-desplegable {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid #e6e6e6;
+        border-top: none;
+    }
+    
+    .barra-superior .enlace-directo {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    #header h1 {
+        font-size: 1.8rem;
+    }
 }
