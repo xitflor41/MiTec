@@ -19,32 +19,51 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Header */
+/* Header con logo a la derecha */
 #header {
     background: linear-gradient(135deg, #1a3a8f, #2c5aa0);
     color: white;
-    padding: 30px 20px;
-    text-align: center;
+    padding: 20px;
+    display: flex;               
+    align-items: center;         
+    justify-content: space-between;  /* separa texto a la izquierda y logo a la derecha */
+    gap: 15px;
+    flex-wrap: wrap;             
+}
+
+#header .logo-header {
+    height: 70px;   /* tamaño minimalista */
+    width: auto;
+    border-radius: 8px;
+}
+
+#header .header-texto {
+    text-align: left;
 }
 
 #header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 5px;
 }
 
 #header p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.9;
 }
 
+
+
+
+
 /* Barra superior estilo Mercado Libre */
 .barra-superior {
-    background-color: #fff159;
+    background-color: #003366;
     border-bottom: 1px solid #e6e6e6;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 20px;
 }
 
 .barra-superior nav {
@@ -52,6 +71,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    gap: 20px;
 }
 
 .barra-superior details {
@@ -61,13 +81,13 @@ body {
 .barra-superior summary {
     list-style: none;
     cursor: pointer;
-    padding: 15px 20px;
+    padding: 10px 15px;
     color: #ffffff;
-    font-weight: 600;
-    font-size: 15px;
-    transition: background-color 0.2s;
+    font-weight: bold;
+    transition: background 0.3s;
     display: flex;
     align-items: center;
+    border-radius: 6px;
 }
 
 /* Eliminar marcadores nativos del details/summary */
@@ -93,7 +113,7 @@ body {
 }
 
 .barra-superior summary:hover {
-    background-color: rgba(0,0,0,0.05);
+    background-color: #0055a5;
 }
 
 /* Menús desplegables - se activan con hover */
@@ -139,22 +159,185 @@ body {
 .barra-superior .enlace-directo {
     text-decoration: none;
     color: #ffffff;
-    padding: 15px 20px;
+    padding: 10px 15px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: bold;
     display: flex;
     align-items: center;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
+    border-radius: 6px;
 }
 
 .barra-superior .enlace-directo:hover {
-    background-color: rgba(0,0,0,0.05);
-    color: #2968c8;
+    background-color: #0055a5;
 }
 
 /* Eliminar saltos de línea */
 .barra-superior .menu-desplegable br {
     display: none;
+}
+
+/* Carrusel de imágenes sin JavaScript */
+.carrusel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.carrusel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+/* Ocultar los inputs radio */
+.carrusel input[type="radio"] {
+    display: none;
+}
+
+.carrusel-slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.carrusel-slide {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.carrusel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrusel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.carrusel-caption h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.carrusel-caption p {
+    font-size: 1.1rem;
+}
+
+/* Controles del carrusel */
+.carrusel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.carrusel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 15px 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+    pointer-events: all;
+}
+
+.carrusel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carrusel-control.prev {
+    left: 20px;
+}
+
+.carrusel-control.next {
+    right: 20px;
+}
+
+/* Indicadores del carrusel */
+.carrusel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Lógica del carrusel con CSS */
+#slide-1:checked ~ .carrusel-slides {
+    transform: translateX(0%);
+}
+
+#slide-2:checked ~ .carrusel-slides {
+    transform: translateX(-25%);
+}
+
+#slide-3:checked ~ .carrusel-slides {
+    transform: translateX(-50%);
+}
+
+#slide-4:checked ~ .carrusel-slides {
+    transform: translateX(-75%);
+}
+
+#slide-1:checked ~ .carrusel-indicators .indicator:nth-child(1),
+#slide-2:checked ~ .carrusel-indicators .indicator:nth-child(2),
+#slide-3:checked ~ .carrusel-indicators .indicator:nth-child(3),
+#slide-4:checked ~ .carrusel-indicators .indicator:nth-child(4) {
+    background: white;
+}
+
+/* Animación automática del carrusel */
+.carrusel-slides {
+    animation: slide 20s infinite;
+}
+
+@keyframes slide {
+    0%, 20% { transform: translateX(0%); }
+    25%, 45% { transform: translateX(-25%); }
+    50%, 70% { transform: translateX(-50%); }
+    75%, 95% { transform: translateX(-75%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Pausar animación al hacer hover */
+.carrusel:hover .carrusel-slides {
+    animation-play-state: paused;
 }
 
 /* Contenido principal */
@@ -188,52 +371,6 @@ body {
 .seccion li {
     margin-bottom: 8px;
 }
-
-.barra-superior {
-  background-color: #003366;
-  padding: 10px 20px;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-  font-family: Arial, sans-serif;
-}
-
-details {
-  position: relative; /* dropdown */
-}
-
-summary {
-  list-style: none;
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-summary::marker {
-  content: "";
-}
-
-summary:hover {
-  background-color: #0055a5;
-}
-
-/* Submenú oculto */
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #006699;}
-  
-
 
 /* Footer */
 #footer {
@@ -286,5 +423,31 @@ summary:hover {
     
     #header h1 {
         font-size: 1.8rem;
+    }
+    
+    .carrusel {
+        height: 350px;
+    }
+    
+    .carrusel-caption h3 {
+        font-size: 1.4rem;
+    }
+    
+    .carrusel-caption p {
+        font-size: 1rem;
+    }
+    
+    .carrusel-control {
+        font-size: 1.5rem;
+        padding: 10px 15px;
+    }
+    
+    .carrusel-indicators {
+        bottom: 15px;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
     }
 }

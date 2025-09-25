@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Tecnológico Superior de Zacatecas Norte</title>
+    <title>Instituto Tecnológico Superior Zacatecas Norte</title>
     <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
     <div id="wrap">
         <div id="header">
-            <h1>Instituto Tecnológico Superior de Zacatecas Norte</h1>
+            <h1>Instituto Tecnológico Superior Zacatecas Norte</h1>
             <p>Bienvenido al sitio oficial del ITSZN</p>
+            <img src="assets/img/itszn.png" alt="Logo ITSZN" class="logo-header">
+            <img src="assets/img/image (4).png" alt="Logo ITSZN" class="logo-header">
         </div>
         
         <div class="barra-superior">
@@ -42,6 +44,61 @@
 
                 <a href="FAQ.html" class="enlace-directo">FAQ</a>
             </nav>
+        </div>
+
+        <!-- Carrusel de imágenes sin JavaScript -->
+        <div class="carrusel-container">
+            <div class="carrusel">
+                <input type="radio" name="slides" id="slide-1" checked>
+                <input type="radio" name="slides" id="slide-2">
+                <input type="radio" name="slides" id="slide-3">
+                <input type="radio" name="slides" id="slide-4">
+                
+                <div class="carrusel-slides">
+                    <div class="carrusel-slide" id="slide-1-content">
+                        <img src="assets/img/alumnos.jpg" alt="Estudiantes en el campus">
+                        <div class="carrusel-caption">
+                            <h3>Ambiente Académico de Excelencia</h3>
+                            <p>Formamos profesionales comprometidos con el desarrollo de nuestra sociedad</p>
+                        </div>
+                    </div>
+                    <div class="carrusel-slide" id="slide-2-content">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Laboratorios modernos">
+                        <div class="carrusel-caption">
+                            <h3>Infraestructura de Vanguardia</h3>
+                            <p>Contamos con laboratorios equipados para una educación de calidad</p>
+                        </div>
+                    </div>
+                    <div class="carrusel-slide" id="slide-3-content">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Estudiante graduado">
+                        <div class="carrusel-caption">
+                            <h3>Éxito Profesional Garantizado</h3>
+                            <p>Nuestros egresados tienen una alta tasa de inserción laboral</p>
+                        </div>
+                    </div>
+                    <div class="carrusel-slide" id="slide-4-content">
+                        <img src="assets/img/tec.jpg" alt="Actividades extracurriculares">
+                        <div class="carrusel-caption">
+                            <h3>Vida Estudiantil Activa</h3>
+                            <p>Promovemos el desarrollo integral a través de diversas actividades</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles del carrusel -->
+                <div class="carrusel-controls">
+                    <label for="slide-1" class="carrusel-control prev">&#10094;</label>
+                    <label for="slide-2" class="carrusel-control next">&#10095;</label>
+                </div>
+                
+                <!-- Indicadores -->
+                <div class="carrusel-indicators">
+                    <label for="slide-1" class="indicator"></label>
+                    <label for="slide-2" class="indicator"></label>
+                    <label for="slide-3" class="indicator"></label>
+                    <label for="slide-4" class="indicator"></label>
+                </div>
+            </div>
         </div>
         
         <div id="content">
@@ -75,24 +132,10 @@
                 </ul>
             </div>
             
-            <div class="seccion" id="faq">
-                <h2>FAQ (Preguntas frecuentes)</h2>
-                <p><strong>¿Cuáles son los requisitos de admisión?</strong></p>
-                <p>Los requisitos varían según el programa. Consulta nuestra sección de admisiones para más información.</p>
-                
-                <p><strong>¿Ofrecen becas?</strong></p>
-                <p>Sí, contamos con diversos programas de becas para estudiantes con buen desempeño académico o necesidades económicas.</p>
-                
-                <p><strong>¿Tienen programas en línea?</strong></p>
-                <p>Sí, ofrecemos programas en modalidad virtual para mayor flexibilidad.</p>
-            </div>
-        </div>
         
         <div id="footer">
-            <p>&copy; 2023 Instituto Tecnológico Superior de Zacatecas Norte. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Instituto Tecnológico Superior Zacatecas Norte. Todos los derechos reservados.</p>
         </div>
     </div>
-
-    <script src="assets/js/script.js"></script>
 </body>
 </html>
